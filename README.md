@@ -20,3 +20,49 @@ randomly without memory instead of systematically trying them?
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+Recall my code,
+```js
+function permutationSort(a) {
+    let count = 0;
+
+    function solved(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) return false;
+        }
+        return true;
+    }
+
+    function swap(arr, i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    function permute(arr, n) {
+        if (solved(arr)) {
+            count++;
+            return;
+        }
+
+        for (let i = n; i < arr.length; i++) {
+            swap(arr, n, i);
+            permute(arr, n + 1);
+            swap(arr, n, i);
+        }
+    }
+
+    permute(a, 0);
+
+    return count; 
+}
+```
+
+The best case would be where the array is already sorted. In this case, my algorithm still has to check whether or not it's already sorted which involves comparing each element to the one after it. This then takes $n$ comparisons.
+
+The worst case would be an input where the algorithm has to try every permutation and then actually sorts it on the last one. For my implementation this would be a reverse sorted array. My algorithm still checks whether or not the array is sorted at every new arrangment so it preforms $n$ comparisons per permuation. Because there are $n!$ possible permutations that makes my algorithm have $O(n*n!)$.
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+I understood the assignment but I wasn't sure how to go about generating unique permutations. I used this website to help make my permute function [https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/#](Link 1).
+I also was having trouble passing in the ```count``` to keep track of the number of permutations. I originally tried global variables but that didn't work so I look at this and also decided to declare my helper functions inside the main one. [https://github.com/COSC3020/brute-force-sorting-NolanBerg/blob/main/code.js](https://github.com/COSC3020/brute-force-sorting-NolanBerg/blob/main/code.js)
