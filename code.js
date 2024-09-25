@@ -1,19 +1,7 @@
+var count = 0;
 function permutationSort(a) {
-    var count = 0;
-    var i = 0;
-    while(i<10){
-      
-      for (var j = i; j < a.length; j++) {
-        s = swap(a, i, j);
-        count++;
-        if (solved(a)){
-        break;
-      }
-    }
-    i++;
-    i = i%a.length
-    }
-    return a;
+    permute(a);
+    return count;
 }
 
 function solved(arr){
@@ -27,4 +15,13 @@ function swap(arr, i, j){
   var temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
+}
+
+function permute(arr, n) {
+    for (var i = n; i <arr .length; i++) {
+        arr = swap(s, n, i);
+        permuteRec(s, n + 1);
+        count++;
+        arr = swap(s, n, i);
+    }
 }
