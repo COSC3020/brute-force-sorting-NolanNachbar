@@ -1,9 +1,7 @@
 function permutationSort(a) {
     var count = 0;
-    for (i = 0; i < a.length; i++){
-      if (solved(a)){
-        break;
-      }
+    var i = 0;
+    while(!solved(a)){
       
       for (var j = i; j < a.length; j++) {
         s = swap(a, i, j);
@@ -12,8 +10,10 @@ function permutationSort(a) {
         break;
       }
     }
+    i++;
+    i = i%a.length
     }
-    return count;
+    return a;
 }
 
 function solved(arr){
