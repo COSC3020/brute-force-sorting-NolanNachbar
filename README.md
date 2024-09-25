@@ -64,5 +64,5 @@ The worst case would be an input where the algorithm has to try every permutatio
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
-I understood the assignment but I wasn't sure how to go about generating unique permutations. I used this website to help make my permute function https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/#
+I understood the concept but I wasn't sure how to go about generating unique permutations. I used this website to help make my permute function https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/#
 I also was having trouble passing in the ```count``` to keep track of the number of permutations. I originally tried global variables but that didn't work so I look at this and also decided to declare my helper functions inside the main one. https://github.com/COSC3020/brute-force-sorting-NolanBerg/blob/main/code.js
