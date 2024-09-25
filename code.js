@@ -1,7 +1,7 @@
 function permutationSort(a) {
     var count = 0;
     var i = 0;
-    while(!solved(a)){
+    while(i<10){
       
       for (var j = i; j < a.length; j++) {
         s = swap(a, i, j);
