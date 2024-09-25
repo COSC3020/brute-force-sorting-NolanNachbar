@@ -13,7 +13,7 @@ function permutationSort(a) {
     }
     
     function permute(arr, n) {
-        if (solved) {
+        if (solved(arr)) {
             count++
             return;
         }
