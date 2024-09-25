@@ -1,33 +1,33 @@
 function permutationSort(a) {
-    function solved(arr){
-      for (var i = 0; i < arr.length - 1; i++){
-        if(arr[i] > arr[i + 1]) return false;
-      }
-      return true;
+    let count = 0;
+
+    function solved(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) return false;
+        }
+        return true;
     }
     
-    function swap(arr, i, j){
-      var temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+    function swap(arr, i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
     
     function permute(arr, n) {
         if (solved(arr)) {
-            count++
+            count++;
             return;
         }
     
         for (let i = n; i < arr.length; i++) {
-            arr = swap(arr, n, i);
-            permuteRec(arr, n + 1);
-            count++;
-            arr = swap(arr, n, i);
+            swap(arr, n, i);
+            permute(arr, n + 1);
+            swap(arr, n, i);
         }
     }
+
+    permute(a, 0);
     
-    var count = 0;
-    permute(a);
-    
-    return count;
+    return count; 
 }
